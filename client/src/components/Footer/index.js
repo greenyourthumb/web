@@ -7,9 +7,9 @@ function Footer() {
                 <div className="d-flex align-items-center justify-content-between small">
                     <div className="text-muted">Copyright &copy; GreenYourThumb.Org 2020</div>
                     <div>
-                        <a href="#">Privacy Policy</a>
+                        <a href="/">Privacy Policy</a>
                                 &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                                <a href="http://localhost:3000/">Terms &amp; Conditions</a>
                     </div>
                 </div>
             </div>

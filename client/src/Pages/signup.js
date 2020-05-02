@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Redirect } from "react-router";
 
 class Signup extends Component {
 	constructor() {
@@ -9,7 +10,8 @@ class Signup extends Component {
             last_name: '',
 			user_email: '',
             user_pass: '',
-            user_zip: ''
+            user_zip: '',
+            isSignedUp: false // <-- initialize the signup state as false
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleChange = this.handleChange.bind(this)
@@ -24,7 +26,7 @@ class Signup extends Component {
 		event.preventDefault()
 
 		//request to server to add a new username/password
-		axios.post('/signup', {
+		axios.post('/api/signup', {
             first_name: this.state.first_name,
 			last_name: this.state.last_name,
 			user_email: this.state.user_email,
@@ -36,7 +38,8 @@ class Signup extends Component {
 				if (!response.data.errmsg) {
 					console.log('successful signup')
 					this.setState({ //redirect to login page
-						redirectTo: '/login'
+                        // redirectTo: '/login'
+                        isSignedUp: true 
 					})
 				} else {
 					console.log('username already taken')
@@ -45,9 +48,14 @@ class Signup extends Component {
 				console.log('signup error: ')
 				console.log(error)
 
-			})
+            })
+            
 	}
     render() {
+        if (this.state.isSignedUp) {
+            // redirect to home if signed up
+            return <Redirect to = {{ pathname: "/login" }} />;
+          }
         return (
                 <div className="bg-auth">
                     <div id="layoutAuthentication">
@@ -140,9 +148,9 @@ class Signup extends Component {
                                     <div className="d-flex align-items-center justify-content-between small">
                                         <div className="text-muted">Copyright &copy; Your Website 2019</div>
                                         <div>
-                                            <a href="#">Privacy Policy</a>
+                                            <a href="/">Privacy Policy</a>
                                     &middot;
-                                    <a href="#">Terms &amp; Conditions</a>
+                                    <a href="/">Terms &amp; Conditions</a>
                                         </div>
                                     </div>
                                 </div>

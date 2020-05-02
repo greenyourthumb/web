@@ -1,7 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const User = require('../database/models/user')
-const passport = require('../passport')
+const User = require('../../database/models/user')
+const SeedCompanies = require('../../database/models/seedCompanies')
+
+const passport = require('../../passport')
 
 router.post('/signup', (req, res) => {
     console.log('user signup');
@@ -41,20 +43,16 @@ router.post(
         next()
     },
     passport.authenticate('local'),
-    (req, res) => {
-        console.log('logged in', req.user);
-        var userInfo = {
-            firstName: req.user.firstName
-        };
-        res.send(userInfo);
-    }
+        (req, res) => {
+            console.log('logged in', req.user);
+            var userInfo = {
+                firstName: req.user.firstName
+            };
+            console.log(userInfo);
+            //console.log(req.session);
+            res.send(userInfo);
+        }   
 )
-
-router.get('/mygreenzone', (req, res, next) => {
-    console.log('===== user!!======')
-    res.redirect('http://localhost:3000/mygreenzone')
-    
-})
 
 router.post('/logout', (req, res) => {
     if (req.user) {
@@ -63,6 +61,14 @@ router.post('/logout', (req, res) => {
     } else {
         res.send({ msg: 'no user to log out' })
     }
+})
+
+router.get('/seed-companies', (req,res) => {
+    
+    SeedCompanies.find({})
+			.sort({ date: -1 })
+			.then((dbModel) => res.send(dbModel))
+			.catch((err) => res.json(err));
 })
 
 module.exports = router

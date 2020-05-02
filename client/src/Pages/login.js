@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router'
 import axios from 'axios'
+//import { response } from 'express'
 
 class Login extends Component {
     constructor() {
@@ -8,11 +9,11 @@ class Login extends Component {
         this.state = {
             user_email: '',
             user_pass: '',
-            redirectTo: null
+            isloggedIn: false,
+            firstname: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
-
     }
 
     handleChange(event) {
@@ -26,22 +27,19 @@ class Login extends Component {
         console.log('handleSubmit')
 
         axios
-            .post('/login', {
+            .post('/api/user/login', {
                 user_email: this.state.user_email,
                 user_pass: this.state.user_pass
             })
             .then(response => {
                 console.log('login response: ')
                 // console.log(response)
-                if (response.status === 200) {
-                    // update App.js state
-                    this.props.updateUser({
-                        loggedIn: true,
-                        username: response.data.userName
-                    })
+                if (response.status === 200) {                    
                     // update the state to redirect to home
+                    console.log(response);
                     this.setState({
-                        redirectTo: '/'
+                        isloggedIn: true,
+                        firstname: response.data.firstName
                     })
                 }
             }).catch(error => {
@@ -52,23 +50,27 @@ class Login extends Component {
     }
 
     render() {
-        if (this.state.redirectTo) {
-            return <Redirect to={{ pathname: this.state.redirectTo }} />
-        } else {
+        if (this.state.isloggedIn) {
+            return <Redirect to={{ pathname: "/mygreenzone",
+                                   state: { firstname: this.state.firstname} 
+                                }} 
+                    />
+        } 
+        else {
             return (
                 <div className="bg-auth">
                     <div id="layoutAuthentication">
                         <div id="layoutAuthentication_content">
                             <main>
-                                <div class="container">
-                                    <div class="row justify-content-center">
-                                        <div class="col-lg-5">
-                                            <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                                <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
-                                                <div class="card-body">
+                                <div className="container">
+                                    <div className="row justify-content-center">
+                                        <div className="col-lg-5">
+                                            <div className="card shadow-lg border-0 rounded-lg mt-5">
+                                                <div className="card-header"><h3 className="text-center font-weight-light my-4">Login</h3></div>
+                                                <div className="card-body">
                                                     <form>
-                                                        <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Email</label>
-                                                            <input class="form-control py-4"
+                                                        <div className="form-group"><label className="small mb-1">Email</label>
+                                                            <input className="form-control py-4"
                                                                 type="text"
                                                                 id="inputEmailAddress"
                                                                 name="user_email"
@@ -77,8 +79,8 @@ class Login extends Component {
                                                                 onChange={this.handleChange}
                                                             />
                                                         </div>
-                                                        <div class="form-group"><label class="small mb-1" for="inputPassword">Password</label>
-                                                            <input class="form-control py-4"
+                                                        <div className="form-group"><label className="small mb-1">Password</label>
+                                                            <input className="form-control py-4"
                                                                 id="inputPassword"
                                                                 type="password"
                                                                 name="user_pass"
@@ -87,18 +89,18 @@ class Login extends Component {
                                                                 onChange={this.handleChange}
                                                             />
                                                         </div>
-                                                        <div class="form-group">
-                                                            <div class="custom-control custom-checkbox"><input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
-                                                                <label class="custom-control-label" for="rememberPasswordCheck">Remember password</label></div>
+                                                        <div className="form-group">
+                                                            <div className="custom-control custom-checkbox"><input className="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
+                                                                <label className="custom-control-label">Remember password</label></div>
                                                         </div>
-                                                        <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                            <a class="small" href="password.html">Forgot Password?</a>
+                                                        <div className="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                                                            <a className="small" href="password.html">Forgot Password?</a>
                                                             <button className="btn btn-primary" onClick={this.handleSubmit} type="submit">Login</button>
                                                         </div>
                                                     </form>
                                                 </div>
-                                                <div class="card-footer text-center">
-                                                    <div class="small"><a href="/signup">Need an account? Sign up!</a></div>
+                                                <div className="card-footer text-center">
+                                                    <div className="small"><a href="/signup">Need an account? Sign up!</a></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -107,14 +109,14 @@ class Login extends Component {
                             </main>
                         </div>
                         <div id="layoutAuthentication_footer">
-                            <footer class="py-4 bg-light mt-auto">
-                                <div class="container-fluid">
-                                    <div class="d-flex align-items-center justify-content-between small">
-                                        <div class="text-muted">Copyright &copy; Your Website 2019</div>
+                            <footer className="py-4 bg-light mt-auto">
+                                <div className="container-fluid">
+                                    <div className="d-flex align-items-center justify-content-between small">
+                                        <div className="text-muted">Copyright &copy; Your Website 2019</div>
                                         <div>
-                                            <a href="#">Privacy Policy</a>
+                                            <a href="/">Privacy Policy</a>
                                 &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                                <a href="/">Terms &amp; Conditions</a>
                                         </div>
                                     </div>
                                 </div>

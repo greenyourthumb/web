@@ -33,9 +33,9 @@ function Home() {
                         <div className=" col-lg-6 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-right">
                             <h1>Your new best friend in every gardening need</h1>
                             <h2>And like any best friend, we are here to help at every step of the process and beyond. So you can relax and
-      benefit for the most of your hardwork.<object data="" type=""></object></h2>
+      benefit for the most of your hardwork.</h2>
 
-                            <a href="#about" className="btn-get-started scrollto" href="/signup">Get Started</a>
+                            <a className="btn-get-started scrollto" href="/signup">Get Started</a>
                         </div>
                         <div className="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
                             <img src="assets/img/hero-img.png" className="img-fluid" alt="" />
@@ -117,25 +117,25 @@ function Home() {
                                     <div className="row">
                                         <div className="col-md-6 icon-box" data-aos="fade-up">
                                             <i className="bx bx-receipt"></i>
-                                            <h4><a href="#">Open Source</a></h4>
+                                            <h4><a href="/">Open Source</a></h4>
                                             <p>We engage with passionate and like-minded people without being influenced by corporations or
                 endorcements.</p>
                                         </div>
                                         <div className="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                                             <i className="bx bx-cube-alt"></i>
-                                            <h4><a href="#">Collaboration is our strength</a></h4>
+                                            <h4><a href="/">Collaboration is our strength</a></h4>
                                             <p>Our goal is to join hands and work together in one direction. Nobody knows it all but everybody
                 knows some.</p>
                                         </div>
                                         <div className="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                                             <i className="bx bx-images"></i>
-                                            <h4><a href="#">Keep it Simple</a></h4>
+                                            <h4><a href="/">Keep it Simple</a></h4>
                                             <p>Our approach is to solve some basic problem which get into the everyday life of an urben farmer.
               </p>
                                         </div>
                                         <div className="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                                             <i className="bx bx-shield"></i>
-                                            <h4><a href="#">A Cautious Community</a></h4>
+                                            <h4><a href="/">A Cautious Community</a></h4>
                                             <p>We build and drive towards a sustainaable tomorrow, nature is the best teacher to guide us there.
               </p>
                                         </div>
@@ -249,10 +249,10 @@ function Home() {
                                     <h4>Walter White</h4>
                                     <span>Chief Executive Officer</span>
                                     <div className="social">
-                                        <a href=""><i className="icofont-twitter"></i></a>
-                                        <a href=""><i className="icofont-facebook"></i></a>
-                                        <a href=""><i className="icofont-instagram"></i></a>
-                                        <a href=""><i className="icofont-linkedin"></i></a>
+                                        <a href="/"><i className="icofont-twitter"></i></a>
+                                        <a href="/"><i className="icofont-facebook"></i></a>
+                                        <a href="/"><i className="icofont-instagram"></i></a>
+                                        <a href="/"><i className="icofont-linkedin"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -263,10 +263,10 @@ function Home() {
                                     <h4>Sarah Jhinson</h4>
                                     <span>Product Manager</span>
                                     <div className="social">
-                                        <a href=""><i className="icofont-twitter"></i></a>
-                                        <a href=""><i className="icofont-facebook"></i></a>
-                                        <a href=""><i className="icofont-instagram"></i></a>
-                                        <a href=""><i className="icofont-linkedin"></i></a>
+                                        <a href="/"><i className="icofont-twitter"></i></a>
+                                        <a href="/"><i className="icofont-facebook"></i></a>
+                                        <a href="/"><i className="icofont-instagram"></i></a>
+                                        <a href="/"><i className="icofont-linkedin"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -277,10 +277,10 @@ function Home() {
                                     <h4>William Anderson</h4>
                                     <span>CTO</span>
                                     <div className="social">
-                                        <a href=""><i className="icofont-twitter"></i></a>
-                                        <a href=""><i className="icofont-facebook"></i></a>
-                                        <a href=""><i className="icofont-instagram"></i></a>
-                                        <a href=""><i className="icofont-linkedin"></i></a>
+                                        <a href="/"><i className="icofont-twitter"></i></a>
+                                        <a href="/"><i className="icofont-facebook"></i></a>
+                                        <a href="/"><i className="icofont-instagram"></i></a>
+                                        <a href="/"><i className="icofont-linkedin"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -291,10 +291,10 @@ function Home() {
                                     <h4>Amanda Jepson</h4>
                                     <span>Accountant</span>
                                     <div className="social">
-                                        <a href=""><i className="icofont-twitter"></i></a>
-                                        <a href=""><i className="icofont-facebook"></i></a>
-                                        <a href=""><i className="icofont-instagram"></i></a>
-                                        <a href=""><i className="icofont-linkedin"></i></a>
+                                        <a href="/"><i className="icofont-twitter"></i></a>
+                                        <a href="/"><i className="icofont-facebook"></i></a>
+                                        <a href="/"><i className="icofont-instagram"></i></a>
+                                        <a href="/"><i className="icofont-linkedin"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -390,7 +390,8 @@ function Home() {
                             </div>
 
                             <div className="col-lg-6">
-                                <form action="forms/contact.php" method="post" role="form" className="php-email-form" data-aos="fade-up">
+                                {/* <form action="forms/contact.php" method="post" role="form" className="php-email-form" data-aos="fade-up"> */}
+                                <form action="/" method="post" >
                                     <div className="form-row">
                                         <div className="col-md-6 form-group">
                                             <input type="text" name="name" className="form-control" id="name" placeholder="Your Name"
@@ -454,11 +455,11 @@ function Home() {
                         </div>
 
                         <div className="social-links">
-                            <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a>
-                            <a href="#" className="facebook"><i className="bx bxl-facebook"></i></a>
-                            <a href="#" className="instagram"><i className="bx bxl-instagram"></i></a>
-                            <a href="#" className="google-plus"><i className="bx bxl-skype"></i></a>
-                            <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a>
+                            <a href="/" className="twitter"><i className="bx bxl-twitter"></i></a>
+                            <a href="/" className="facebook"><i className="bx bxl-facebook"></i></a>
+                            <a href="/" className="instagram"><i className="bx bxl-instagram"></i></a>
+                            <a href="/" className="google-plus"><i className="bx bxl-skype"></i></a>
+                            <a href="/" className="linkedin"><i className="bx bxl-linkedin"></i></a>
                         </div>
 
                     </div>
@@ -478,7 +479,7 @@ function Home() {
                 </div>
             </footer>
 
-            <a href="#" className="back-to-top"><i className="icofont-simple-up"></i></a>
+            <a href="/" className="back-to-top"><i className="icofont-simple-up"></i></a>
 
             </>
 

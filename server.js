@@ -6,7 +6,7 @@ const dbConnection = require('./database')
 const MongoStore = require('connect-mongo')(session)
 const passport = require('./passport');
 
-const user = require('./routes/user')
+const routes = require('./routes')
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -35,7 +35,7 @@ app.use(passport.session()) // calls the deserializeUser
 
 
 // Routes
-app.use('/', user)
+app.use(routes)
 
 
 // Serve up static assets (usually on heroku)

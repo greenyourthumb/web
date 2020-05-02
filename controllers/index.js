@@ -1,5 +1,5 @@
-const Items = require("./items-controller.js");
+const SeedCompanies = require("./SeedCompanies-Controller.js");
 
 module.exports = {
-	Items,
+	SeedCompanies,
 };
