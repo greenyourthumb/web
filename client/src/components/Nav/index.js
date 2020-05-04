@@ -18,7 +18,7 @@ function Nav() {
 					<div className="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
 						<a className="dropdown-item" href="/">Settings</a><a className="dropdown-item" href="/">Activity Log</a>
 						<div className="dropdown-divider"></div>
-						<a className="dropdown-item" href="login.html">Logout</a>
+						<a className="dropdown-item" href="/api/user/logout">Logout</a>
 					</div>
 				</li>
 			</ul>

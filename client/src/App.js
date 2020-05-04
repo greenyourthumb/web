@@ -17,7 +17,7 @@ import Podcasts from "./Pages/Resources/Information/Podcasts"
 import Books from "./Pages/Resources/Information/Books"
 import Blogs from "./Pages/Resources/Information/Blogs"
 import SeedCompanies from "./Pages/Resources/Information/SeedCompanies"
-import Gallery from "./Pages/Resources/Gallery"
+import MyGallery from "./Pages/Resources/Gallery"
 import IPM from "./Pages/Resources/IPM"
 
 
@@ -31,20 +31,20 @@ function App() {
 					<Route exact path="/signup" component={Signup} />
 					<Route exact path="/login" component={Login} />
 					<Route exact path="/mygreenzone" component={MyGreenZone} />
-					<Route exact path="/mygreenzone/my-cal" component={MyCal} />
-					<Route exact path="/mygreenzone/budgeting" component={Budgeting} />
-					<Route exact path="/mygreenzone/layout" component={Designing} />
-					<Route exact path="/mygreenzone/seed-starting" component={SeedStarting} />
-					<Route exact path="/mygreenzone/people" component={People} />
-					<Route exact path="/mygreenzone/forums" component={Forums} />
-					<Route exact path="/mygreenzone/projects" component={Projects} />
-					<Route exact path="/mygreenzone/garden-centers" component={IGCs} />
-					<Route exact path="/mygreenzone/podcasts" component={Podcasts} />
-					<Route exact path="/mygreenzone/books" component={Books} />
-					<Route exact path="/mygreenzone/blogs" component={Blogs} />
-					<Route exact path="/mygreenzone/seed-companies" component={SeedCompanies} />
-					<Route exact path="/mygreenzone/gallery" component={Gallery} />
-					<Route exact path="/mygreenzone/ipm" component={IPM} />
+					<Route exact path="/my-cal" component={MyCal} />
+					<Route exact path="/budgeting" component={Budgeting} />
+					<Route exact path="/layout" component={Designing} />
+					<Route exact path="/seed-starting" component={SeedStarting} />
+					<Route exact path="/people" component={People} />
+					<Route exact path="/forums" component={Forums} />
+					<Route exact path="/projects" component={Projects} />
+					<Route exact path="/garden-centers" component={IGCs} />
+					<Route exact path="/podcasts" component={Podcasts} />
+					<Route exact path="/books" component={Books} />
+					<Route exact path="/blogs" component={Blogs} />
+					<Route exact path="/seed-companies" component={SeedCompanies} />
+					<Route exact path="/gallery" component={MyGallery} />
+					<Route exact path="/ipm" component={IPM} />
 					<Route component={NoMatch} />
 				</Switch>
 			</div>

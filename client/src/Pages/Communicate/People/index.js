@@ -1,9 +1,10 @@
 import React from "react";
-import "./style.css";
+// import "./style.css";
 
 import Nav from "../../../components/Nav"
 import SideNav from "../../../components/SideNav"
 import Footer from "../../../components/Footer"
+import PeopleList from "../../../components/People"
 
 
 function People() {
@@ -18,7 +19,7 @@ function People() {
                             <div className="container-fluid">
                                 <h1 className="mt-4">People</h1>
         <hr/>
-                                
+                                <PeopleList />
                             </div>
                         </main>
                         <Footer />

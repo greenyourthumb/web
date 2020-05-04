@@ -10,7 +10,8 @@ class Login extends Component {
             user_email: '',
             user_pass: '',
             isloggedIn: false,
-            firstname: ''
+            firstname: '',
+            zipcode: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -39,7 +40,8 @@ class Login extends Component {
                     console.log(response);
                     this.setState({
                         isloggedIn: true,
-                        firstname: response.data.firstName
+                        firstname: response.data.firstName,
+                        zipcode: response.data.zipCode
                     })
                 }
             }).catch(error => {
@@ -52,7 +54,9 @@ class Login extends Component {
     render() {
         if (this.state.isloggedIn) {
             return <Redirect to={{ pathname: "/mygreenzone",
-                                   state: { firstname: this.state.firstname} 
+                                   state: { firstname: this.state.firstname,
+                                            zipcode: this.state.zipcode
+                                        } 
                                 }} 
                     />
         } 
