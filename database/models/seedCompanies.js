@@ -9,7 +9,7 @@ const SeedCompanySchema = new Schema({
 	address: { type: String, unique: false, required: false },
 	zip: { type: Number, unique: false, required: false },
 	hours: { type: String, unique: false, required: false },
-	phone: { type: Number, unique: false, required: false },
+	phone: { type: String, unique: false, required: false },
 	website: { type: String, unique: false, required: false },
 	google_rating: { type: Number, unique: false, required: false }
 })

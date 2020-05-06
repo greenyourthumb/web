@@ -1,11 +1,10 @@
 //Importing models
-const db = require("../database/models");
+const db = require("../database/models/seedCompanies");
 
 // Defining methods for the SeedCompaniessController
 module.exports = {
 	findAll: function (req, res) {
 		db.SeedCompanies.find(req.query)
-			.sort({ date: -1 })
 			.then((dbModel) => res.json(dbModel))
 			.catch((err) => res.json(err));
 	},

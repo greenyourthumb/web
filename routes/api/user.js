@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../../database/models/user')
-const SeedCompanies = require('../../database/models/seedCompanies')
 
 const passport = require('../../passport')
 
@@ -62,14 +61,6 @@ router.post('/logout', (req, res) => {
     } else {
         res.send({ msg: 'no user to log out' })
     }
-})
-
-router.get('/seed-companies', (req,res) => {
-    
-    SeedCompanies.find({})
-			.sort({ date: -1 })
-			.then((dbModel) => res.send(dbModel))
-			.catch((err) => res.json(err));
 })
 
 module.exports = router

@@ -1,4 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
+
+import API from "../../../../Utils/API";
 
 import Nav from "../../../../components/Nav"
 import SideNav from "../../../../components/SideNav"
@@ -8,23 +10,36 @@ import DataGrid from 'react-data-grid';
 import 'react-data-grid/dist/react-data-grid.css';
 
 const columns = [
-    { key: 'name', name: 'Name' },
-    { key: 'address', name: 'Address' },
-    { key: 'zip', name: 'ZIP' },
+    { key: 'name', name: 'Name', resizable: true },
+    { key: 'address', name: 'Address', resizable: true},
+    { key: 'zip', name: 'ZIP', sortable: true, width: 100},
     { key: 'hours', name: 'Business Hours' },
-    { key: 'phone', name: 'Phone' },
+    { key: 'phone', name: 'Phone', width: 160 },
     { key: 'website', name: 'Website' },
-    { key: 'google_rating', name: 'Google Rating' }
+    { key: 'google_rating', name: 'Google Rating', sortable: true, width: 140}
 ];
-						
-const rows = [
-    { name: 'Baker Creek Heirloom Seed Company', address: '2278 Baker Creek Rd, Mansfield, MO', 'zip': '65704', hours: 'S-F 8AM-4PM S Closed', phone: '(417) 924-8917', website: 'https://www.rareseeds.com/', google_rating: '4.7' },
-    { name: 'The Tasteful Garden', address: '895 Co Rd 8, Heflin, Alabama', 'zip': '36246', hours: 'M-F 9AM-4PM SS Closed', phone: '256-403-3413', website: 'https://www.tastefulgarden.com', google_rating: '3.6' }
-];
-				
-function SeedCompanies() {
-    return (
-        <>
+
+class SeedCompanies extends Component {
+    constructor() {
+        super()
+	this.state = {
+		items: [],
+    }
+}
+	componentDidMount() {
+		this.loadItems();
+	}
+	loadItems = () => {
+		API.getItems()
+			.then((res) =>
+				this.setState({
+					items: res.data,
+				})
+			)
+			.catch((err) => console.log(err));
+	};
+	render() {
+		return (			
             <div className="sb-nav-fixed">
                 <Nav />
                 <div id="layoutSidenav">
@@ -36,7 +51,7 @@ function SeedCompanies() {
                                 <hr />
                                 <DataGrid
                                     columns={columns}
-                                    rows={rows}
+                                    rows={this.state.items}                                    
                                 />
                             </div>
                         </main>
@@ -45,9 +60,8 @@ function SeedCompanies() {
                 </div>
 
             </div>
-        </>
-
-    );
+		)
+	}
 }
 
 export default SeedCompanies;
