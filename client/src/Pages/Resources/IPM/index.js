@@ -16,7 +16,7 @@ function IPM() {
                     <div id="layoutSidenav_content">
                         <main>
                             <div className="container-fluid">
-                                <h1 className="mt-4">Insects & Pests Management</h1>
+                                <h1 className="mt-4">Insects, Pests & Disease Management</h1>
         <hr/>
                                 
                             </div>

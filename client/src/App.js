@@ -6,11 +6,14 @@ import Signup from "./Pages/signup";
 import Login from "./Pages/login";
 import MyGreenZone from "./Pages/mygreenzone"
 import MyCal from "./Pages/Interface/Monitoring/MyCal"
-import Budgeting from "./Pages/Interface/Planning/Budgeting"
-import Designing from "./Pages/Interface/Planning/Designing"
-import SeedStarting from "./Pages/Interface/Planning/SeedStarting"
+import Budgeting from "./Pages/Interface/Monitoring/Budgeting"
+import Designing from "./Pages/Interface/Plan/Designing"
+import SeedStarting from "./Pages/Interface/Plan/SeedStarting"
+import CropCal from "./Pages/Interface/Plan/CropCal"
 import People from "./Pages/Communicate/People"
 import Forums from "./Pages/Communicate/Forums"
+import Topics from "./Pages/Communicate/Forums/Topics"
+import Topic from "./Pages/Communicate/Forums/Topics/Topic"
 import Projects from "./Pages/Communicate/Projects"
 import IGCs from "./Pages/Resources/Information/IGCs"
 import Podcasts from "./Pages/Resources/Information/Podcasts"
@@ -19,6 +22,7 @@ import Blogs from "./Pages/Resources/Information/Blogs"
 import SeedCompanies from "./Pages/Resources/Information/SeedCompanies"
 import MyGallery from "./Pages/Resources/Gallery"
 import IPM from "./Pages/Resources/IPM"
+import Profile from "./Pages/Profile"
 
 
 
@@ -35,8 +39,11 @@ function App() {
 					<Route exact path="/budgeting" component={Budgeting} />
 					<Route exact path="/layout" component={Designing} />
 					<Route exact path="/seed-starting" component={SeedStarting} />
+					<Route exact path="/crop-calendar" component={CropCal} />
 					<Route exact path="/people" component={People} />
 					<Route exact path="/forums" component={Forums} />
+					<Route exact path="/topics" component={Topics} />
+					<Route exact path="/posts" component={Topic} />
 					<Route exact path="/projects" component={Projects} />
 					<Route exact path="/garden-centers" component={IGCs} />
 					<Route exact path="/podcasts" component={Podcasts} />
@@ -45,6 +52,7 @@ function App() {
 					<Route exact path="/seed-companies" component={SeedCompanies} />
 					<Route exact path="/gallery" component={MyGallery} />
 					<Route exact path="/ipm" component={IPM} />
+					<Route exact path="/settings" component={Profile} />
 					<Route component={NoMatch} />
 				</Switch>
 			</div>

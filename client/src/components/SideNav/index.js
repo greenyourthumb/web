@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 function SideNav(props) {
     return (
         <>
@@ -20,7 +18,7 @@ function SideNav(props) {
                                 <nav className="sb-sidenav-menu-nested nav">
                                     <a className="nav-link" href="/layout">Design Studio</a>
                                     <a className="nav-link" href="/seed-starting">Seed Starting</a>
-                                    <a className="nav-link" href="/budgeting">Budgeting</a>
+                                    <a className="nav-link" href="/crop-calendar">Crop Calendar</a>
                                 </nav>
                             </div>
                             <a className="nav-link collapsed" data-toggle="collapse" data-target="#collapseLayouts-monitoring" aria-expanded="false" aria-controls="collapseLayouts-planning">
@@ -29,6 +27,7 @@ function SideNav(props) {
                             <div className="collapse" id="collapseLayouts-monitoring" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav className="sb-sidenav-menu-nested nav">
                                     <a className="nav-link" href="/my-cal">MyCal</a>
+                                    <a className="nav-link" href="/budgeting">Budgeting</a>
                                 </nav>
                             </div>
 

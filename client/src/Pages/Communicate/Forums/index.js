@@ -1,10 +1,10 @@
 import React from "react";
-import "./style.css";
 
 import Nav from "../../../components/Nav"
 import SideNav from "../../../components/SideNav"
 import Footer from "../../../components/Footer"
 
+import Forum from '../../../components/Forum'
 
 function Forums() {
     return (
@@ -17,8 +17,7 @@ function Forums() {
                         <main>
                             <div className="container-fluid">
                                 <h1 className="mt-4">Forums</h1>
-        <hr/>
-                                
+                                <Forum />
                             </div>
                         </main>
                         <Footer />

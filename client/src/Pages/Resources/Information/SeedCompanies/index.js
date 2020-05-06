@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 
 import Nav from "../../../../components/Nav"
 import SideNav from "../../../../components/SideNav"
