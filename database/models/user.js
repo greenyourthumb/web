@@ -10,7 +10,11 @@ const userSchema = new Schema({
 	lastName: { type: String, unique: false, required: false },
 	userName: { type: String, unique: false, required: false },
 	password: { type: String, unique: false, required: false },
-	zipCode: { type: Number, unique: false, required: false }
+	about: { type: String, unique: false, required: false },
+	interests: { type: String, unique: false, required: false },
+	zipCode: { type: Number, unique: false, required: false },
+	profileImageURL: {type: String, unique: false, required: false},
+	created: {type: Date, default: Date.now() } 
 })
 
 // Define schema methods

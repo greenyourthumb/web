@@ -44,13 +44,14 @@ router.post(
     passport.authenticate('local'),
         (req, res) => {
             console.log('logged in', req.user);
+            console.log('passport', req.session.passport.user);
             var userInfo = {
                 firstName: req.user.firstName,
                 zipCode: req.user.zipCode
             };
             console.log(userInfo);
             //console.log(req.session);
-            res.send(userInfo);
+            res.send(req.user);
         }   
 )
 
@@ -63,4 +64,32 @@ router.post('/logout', (req, res) => {
     }
 })
 
+router.get('/all', function (req, res) {
+
+    User.find({}, (err, data) => {
+        if (err) {
+            console.log('User.js post error: ', err)
+        } else {
+            res.json(data)
+        }
+
+    })
+
+})
+router.post('/all', function (req, res) {
+    User.findOne({ username: req.body.user_email }, (err, data) => {
+        if (err) {
+            console.log('User.js post error: ', err)
+        } else {
+            res.json(data)
+        }
+
+    })
+})
+
+router.put('/:id', function (req, res) {
+    User.findOneAndUpdate({ _id: req.params.id }, req.body)
+			.then((dbModel) => res.json(dbModel))
+			.catch((err) => res.json(err));
+})
 module.exports = router

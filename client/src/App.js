@@ -13,7 +13,7 @@ import CropCal from "./Pages/Interface/Plan/CropCal"
 import People from "./Pages/Communicate/People"
 import Forums from "./Pages/Communicate/Forums"
 import Topics from "./Pages/Communicate/Forums/Topics"
-import Topic from "./Pages/Communicate/Forums/Topics/Topic"
+import Posts from "./Pages/Communicate/Forums/Topics/Posts"
 import Projects from "./Pages/Communicate/Projects"
 import IGCs from "./Pages/Resources/Information/IGCs"
 import Podcasts from "./Pages/Resources/Information/Podcasts"
@@ -43,7 +43,7 @@ function App() {
 					<Route exact path="/people" component={People} />
 					<Route exact path="/forums" component={Forums} />
 					<Route exact path="/topics" component={Topics} />
-					<Route exact path="/posts" component={Topic} />
+					<Route exact path="/posts" component={Posts} />
 					<Route exact path="/projects" component={Projects} />
 					<Route exact path="/garden-centers" component={IGCs} />
 					<Route exact path="/podcasts" component={Podcasts} />

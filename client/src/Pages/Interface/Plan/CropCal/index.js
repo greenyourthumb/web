@@ -8,27 +8,27 @@ import Timeline from 'react-calendar-timeline'
 import 'react-calendar-timeline/lib/Timeline.css'
 import moment from 'moment'
 
-const groups = [{ id: 1, title: 'Broccoli By Seed' }, { id: 2, title: 'Carrots By Seed' }, { id: 3, title: 'Pumpkin By Seed Or Transplant' }]
+const groups = [{ id: 1, title: 'Broccoli' }, { id: 2, title: 'Carrots' }, { id: 3, title: 'Pumpkin' }]
 
 const items = [
     {
         id: 1,
         group: 1,
-        title: 'Indoors',
+        title: 'By Seed Indoors',
         start_time: moment('2020-1-1'),
         end_time: moment('2020-1-1').add(3, 'M')
     },
     {
         id: 2,
         group: 2,
-        title: 'Outdoors',
+        title: 'By Seed Outdoors',
         start_time: moment('2020-2-15'),
         end_time: moment('2020-2-15').add(2, 'M')
     },
     {
         id: 3,
         group: 3,
-        title: 'Outdoors',
+        title: 'By Seed Or Transplant Outdoors',
         start_time: moment('2020-3-25'),
         end_time: moment('2020-3-25').add(2.5, 'M')
     }
@@ -47,6 +47,7 @@ function CropCal() {
                             <hr />
                             <div>
                                 <Timeline
+                                    sidebarContent={"Plant"}
                                     groups={groups}
                                     items={items}
                                     defaultTimeStart={moment().add(-1, 'M')}
