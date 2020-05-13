@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { storage } from '../../firebase';
+import API from "../../Utils/API";
 
 import "./css/style.css";
 
@@ -37,12 +38,23 @@ class ImageUpload extends Component {
             () => {
                 //complete status function
                 storage.ref('images').child(image.name).getDownloadURL().then(url => {
-                    console.log(url);
                     this.setState({ url });
+
+                    API.updateUserProfile({
+                        profileImageURL: this.state.url,
+                    })
+                    // .then((res) => this.loadItems())
+                    .catch((err) => console.log(err));
+                    console.log(url);
                 })
             });
 
     }
+    // loadItems = () => {
+    //     API.getUser({
+
+    //     })
+    // }
     render() {
         return (
             <div>

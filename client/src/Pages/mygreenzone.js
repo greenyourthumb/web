@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Bar } from 'react-chartjs-2';
 // import axios from 'axios'
 import API from "../Utils/API";
+import session from "express-session";
 
 import Nav from "../components/Nav"
 import SideNav from "../components/SideNav"
@@ -40,13 +41,14 @@ class MyGreenZone extends Component {
                     },
                 ]
             },
+            isLoggedIn: true,
         }
     }
     componentDidMount() {
         this.loadItems();
     }
 
-    loadItems = () => {
+       loadItems = () => {
         API.getWeatherForecast()
             .then((res) =>
                 this.setState({
@@ -57,16 +59,14 @@ class MyGreenZone extends Component {
                             label: 'Temperature',
                             backgroundColor: '#FFE6AA',
                             borderColor: 'rgba(0,0,0,1)',
-                            data: [10,20,30,40,50],
+                            data: res.tempData,
                         },
                     ]
                     }
-                })
+                }) 
             )
-            .catch((err) => console.log(err));
-            console.log(this.state)
+            .catch((err) => console.log(err))   
     };
-
 
 
     render() {

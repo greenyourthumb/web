@@ -83,28 +83,33 @@ export default {
 		return axios.post("/api/user/all", userData);
 	},
 
+	getUser: function (userData) {
+		return axios.get("/:id", userData);
+	},
+
 	updateUserProfile: function (userData) {
 		return axios.put("/:id", userData);
 	},
 
 	getWeatherForecast: async function () {
 		let results = []
-		// var temps = [];
-		// var wind = [];
+		var temps = [];
+		var winds = [];
 		axios
     		.get('https://api.openweathermap.org/data/2.5/forecast?zip=75098,us&units=imperial&appid=166a433c57516f51dfab1f7edaed8413')
     		.then((res) => {
-				var i = 0;
-				while (i < 40) {
-				var responseData = res.data.list[i]
-
-				//var temp = res.data.list[i].main.temp;
-				
-				results.push(responseData);
-				i = i + 8;
-			}
+				var j = 0;
+					while (j < 40) {
+						var temp = res.data.list[j].main.temp;
+						var wind = res.data.list[j].wind.speed;
+						temps.push(temp);
+						winds.push(wind)
+						j = j + 8;
+					}
+					results.push({tempData: temps}, {windData: winds});
 		});
 		console.log(results);
 		return results;
 	}
 };
+
