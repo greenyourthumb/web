@@ -1,6 +1,6 @@
 // Dependencies
 const router = require("express").Router();
-const TopicsController = require("../../controllers/TopicsController");
+const TopicsController = require("../../controllers/topicsController");
 
 // Matches with "/api/items"
 router.route("/").get(TopicsController.findAll).post(TopicsController.create);
