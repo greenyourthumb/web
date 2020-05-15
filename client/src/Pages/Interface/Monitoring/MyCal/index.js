@@ -4,27 +4,24 @@ import 'moment/locale/en-ca';
 import API from "../../../../Utils/API";
 import moment from 'moment';
 import "./style.css"
-import { DatePicker, DatePickerInput } from 'rc-datepicker';
+import { DatePickerInput } from 'rc-datepicker';
 import Nav from "../../../../components/Nav"
 import SideNav from "../../../../components/SideNav"
 import Footer from "../../../../components/Footer"
-import { Input, FormBtn, TextArea , Select} from "../../../../components/Form";
+import { Input, FormBtn, TextArea, Select } from "../../../../components/Form";
 import Reminders from "../../../../components/Reminders"
-
 import 'rc-datepicker/lib/style.css';
-
-
 
 class MyCal extends Component {
     constructor() {
         super()
-    this.state = {
-        myList: [{}],
-        title: '',
-        details: '',
-        priority: '',
-        dateSelected: '',
-    }
+        this.state = {
+            myList: [{}],
+            title: '',
+            details: '',
+            priority: '',
+            dateSelected: '',
+        }
     }
     componentDidMount() {
         this.loadItems();
@@ -41,9 +38,9 @@ class MyCal extends Component {
 
     handleDateChange = (jsDate, dateString) => {
         console.log(jsDate);
-        this.setState({ 
+        this.setState({
             dateSelected: dateString
-            });
+        });
 
     }
 
@@ -98,14 +95,14 @@ class MyCal extends Component {
                                         <Input
                                             placeholder="Title"
                                             name="title"
-                                            value={this.state.title} 
-                                            onChange={this.handleInputChange("title")} 
+                                            value={this.state.title}
+                                            onChange={this.handleInputChange("title")}
                                         />
                                         <TextArea
                                             placeholder="Details"
                                             name="details"
-                                            value={this.state.details} 
-                                            onChange={this.handleInputChange("details")} 
+                                            value={this.state.details}
+                                            onChange={this.handleInputChange("details")}
                                         />
                                         <DatePickerInput
                                             onChange={this.handleDateChange}
@@ -113,29 +110,26 @@ class MyCal extends Component {
                                             name="dateString"
                                             className='my-custom-datepicker-component'
                                         />
-                                            <label className="col-form-label">Select Priority</label>
-                                            <Select name="priority" onChange={this.handleInputChange("priority")} value={this.state.priority}>
-                                                <option value="Low">Low</option>
-                                                <option value="Medium">Medium</option>
-                                                <option value="High">High</option>
-                                            </Select>
+                                        <label className="col-form-label">Select Priority</label>
+                                        <Select name="priority" onChange={this.handleInputChange("priority")} value={this.state.priority}>
+                                            <option value="Low">Low</option>
+                                            <option value="Medium">Medium</option>
+                                            <option value="High">High</option>
+                                        </Select>
                                         <br />
-                                        <FormBtn 
-                                        // disabled={!(this.state.title && this.state.dateString)}
-                                        onClick={this.handdleSubmit}>Submit</FormBtn>
+                                        <FormBtn
+                                            // disabled={!(this.state.title && this.state.dateString)}
+                                            onClick={this.handdleSubmit}>Submit</FormBtn>
                                     </div>
-                                        <Reminders>
+                                    <Reminders>
                                         {this.state.myList.map((List, index) => (
                                             <div className={`alert ${List.priority}`} role="alert">
-                                            <span>On {moment(List.dateSelected).format("MMM Do YY")}</span> <h5>{List.title}</h5> {List.details}
-                                          </div>
-                                            )
+                                                <span>On {moment(List.dateSelected).format("MMM Do YY")}</span> <h5>{List.title}</h5> {List.details}
+                                            </div>
+                                        )
                                         )}
-
-                                        </Reminders>
+                                    </Reminders>
                                 </div>
-
-                                {/* <DatePicker onChange={this.onChange} value={this.date} /> */}
                             </div>
                         </main>
                         <Footer />
