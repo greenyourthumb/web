@@ -4,7 +4,7 @@ const db = require("../database/models");
 // Defining methods for the PostsController
 module.exports = {
 	findAll: function (req, res) {
-		db.Posts.find({ topic_id: "5eb4e6750aa05f430d6e37da" })
+		db.Posts.find(req.query)
 			.sort({ created_at: -1 })
 			.then((dbModel) => res.json(dbModel))
 			.catch((err) => res.json(err));
