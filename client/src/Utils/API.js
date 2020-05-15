@@ -91,6 +91,20 @@ export default {
 		return axios.put("/:id", userData);
 	},
 
+	getUserGrowList: function () {
+		return axios.get("/api/growlist");
+	},
+
+	addGrowItem: function(userData) {
+		return axios
+				.post("/api/masterInventory/find", userData)
+				.then((res) => {
+					console.log(res.data);
+
+					axios.post("/api/growlist" , res.data)
+				})
+	},
+
 	getWeatherForecast: async function () {
 		let results = []
 		var temps = [];
