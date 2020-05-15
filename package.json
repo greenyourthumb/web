@@ -20,6 +20,9 @@
 		"nodemon": "^2.0.3",
 		"passport": "^0.4.1",
 		"passport-local": "^1.0.0",
+		"rc-datepicker": "^5.0.16",
+		"react-big-calendar": "^0.24.6",
+		"react-big-scheduler": "^0.2.7",
 		"react-calendar": "^3.0.1",
 		"react-calendar-timeline": "^0.26.7",
 		"react-canvas-draw": "^1.1.1",
@@ -27,6 +30,7 @@
 		"react-data-grid": "^7.0.0-canary.16",
 		"react-images": "^1.1.7",
 		"react-photo-gallery": "^8.0.0",
+		"react-tackle-box": "^2.1.0",
 		"reactstrap": "^8.4.1",
 		"yarn": "^1.22.4"
 	},

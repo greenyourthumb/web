@@ -8,6 +8,7 @@ import 'react-data-grid/dist/react-data-grid.css';
 import Nav from "../../../../components/Nav"
 import SideNav from "../../../../components/SideNav"
 import Footer from "../../../../components/Footer"
+import ListOfItems from "../../../../components/listOfItems"
 
 const columns = [
     { key: 'plant_name', name: 'Plant Name'},
@@ -70,7 +71,7 @@ class SeedStarting extends Component {
                 .catch((err) => console.log(err));
         }
         this.setState({
-            plantkey: '',
+            plantName: '',
             plantVariety: '',
             plantSeller: '',
         });
@@ -119,12 +120,12 @@ class SeedStarting extends Component {
                                             </FormBtn>
                                     </form>
                                 </div>
-                                <div>
+                                <ListOfItems>
                                     <DataGrid
                                         columns={columns}
                                         rows={this.state.Mylist}
                                     />
-                                </div>
+                                </ListOfItems>
                             </div>
                         </main>
                         <Footer />

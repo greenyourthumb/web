@@ -4,4 +4,5 @@ module.exports = {
 	Posts: require("./posts"),
 	masterInventory: require("./masterInventory"),
 	GrowList: require("./GrowList"),
+	Reminders: require("./reminders")
 };

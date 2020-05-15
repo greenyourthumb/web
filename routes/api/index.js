@@ -7,6 +7,7 @@ const topicRoutes = require("./topics");
 const postRoutes = require("./posts");
 const growListRouter = require("./growlist");
 const masterInventoryRouter = require("./masterInventory");
+const remindersRouter = require("./reminders");
 
 // API Routes
 router.use("/user", userRoutes);
@@ -16,6 +17,7 @@ router.use("/topics", topicRoutes);
 router.use("/posts", postRoutes);
 router.use("/growlist", growListRouter);
 router.use("/masterInventory", masterInventoryRouter);
+router.use("/reminders", remindersRouter);
 
 
 module.exports = router;

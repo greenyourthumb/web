@@ -10,6 +10,15 @@ export function Input(props) {
 	);
 }
 
+export function Select(props) {
+	return (
+		<div className="form-group">
+			<select class="form-control" {...props} />
+		</div>
+	);
+}
+
+
 export function TextArea(props) {
 	return (
 		<div className="form-group" >
@@ -23,7 +32,7 @@ export function FormBtn(props) {
 		<button className="btn btn-primary mb-2"
 			{...props}
 			style={{ float: "right", marginBottom: 10 }}
-			>
+		>
 			{/* What this.props.children does is that it is used to display whatever you include between the opening and closing tags when invoking a component. */}
 			{props.children}
 		</button>

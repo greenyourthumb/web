@@ -105,6 +105,15 @@ export default {
 				})
 	},
 
+	getMyReminders: function () {
+		return axios.get("/api/reminders");
+	},
+
+	addReminder: function(reminderData) {
+		console.log(reminderData);
+		return axios.post("/api/reminders", reminderData)
+	},
+
 	getWeatherForecast: async function () {
 		let results = []
 		var temps = [];
