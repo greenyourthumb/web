@@ -25,11 +25,11 @@ function UserProfile() {
                             <div className="col-md-6">
                                 <h6>About:</h6>
                                 <p>
-                                    Web Designer, UI/UX Engineer
+                                    Backyard farmer, Fullstack developer
                             </p>
                                 <h6>Interested in:</h6>
                                 <p>
-                                    Indie music, skiing and hiking. I love the great outdoors.
+                                    Growing my own food, solving problems through code.
                             </p>
                             </div>
                             </div>

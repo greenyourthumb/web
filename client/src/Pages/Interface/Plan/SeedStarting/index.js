@@ -65,19 +65,19 @@ class SeedStarting extends Component {
     render() {
         const columns = [
             { key: 'plant_name', name: 'Plant Name'},
-            { key: 'variety', name: 'Variety' },
-            { key: 'seed_seller', name: 'Seed From' },
-            { key: 'sprouts_in', name: 'Sprouts In' },
-            { key: 'ideal_temp', name: 'Ideal Temp'},
-            { key: 'seed_depth', name: 'Seed Depth'  },
-            { key: 'plant_spacing', name: 'Plant Spacing'},
-            { key: 'row_spacing', name: 'Row Spacing'},
-            { key: 'min_full_sun' , name: 'Min Sun'},
+            { key: 'variety', name: 'Variety', resizable: true },
+            { key: 'seed_seller', name: 'Seeds From', resizable: true },
+            { key: 'sprouts_in', name: 'Sprouts In (Days)' },
+            { key: 'ideal_temp', name: 'Ideal Temp (°F)'},
+            { key: 'seed_depth', name: 'Seed Depth (Inch)'  },
+            { key: 'plant_spacing', name: 'Plant Spacing (Inch)'},
+            { key: 'row_spacing', name: 'Row Spacing (Inch)'},
+            { key: 'min_full_sun' , name: 'Min Sun (Hrs)'},
             { key: 'frost_hardy', name: 'Frost Hardy'},
             { key: 'soil_type', name: 'Soil Type'},
             { key: 'moisture_level', name: 'Moisture Level' },
             { key: 'ideal_ph', name: 'Ideal pH'},
-            { key: 'link', name: 'Link'}
+            { key: 'link', name: 'Link', resizable: true}
         ];
         
         return (
