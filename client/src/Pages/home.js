@@ -17,7 +17,7 @@ function Home() {
                             <li className="active"><a href="#header">Home</a></li>
                             <li><a href="#about">About Us</a></li>
                             <li><a href="#features">Features</a></li>
-                            <li><a href="#team">Team</a></li>
+                            {/* <li><a href="#team">Team</a></li> */}
                             <li><a href="#faq">FAQs</a></li>
                             <li><a href="#contact">Contact Us</a></li>
                             <li className="get-started"><a href="/signup">Get Started</a></li>
@@ -31,14 +31,14 @@ function Home() {
                 <div className="container">
                     <div className="row d-flex align-items-center">
                         <div className=" col-lg-6 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-right">
-                            <h1>Your new best friend in every gardening need</h1>
+                            <h1>your new best friend in every gardening need</h1>
                             <h2>And like any best friend, we are here to help at every step of the process and beyond. So you can relax and
       benefit for the most of your hardwork.</h2>
 
                             <a className="btn-get-started scrollto" href="/signup">Get Started</a>
                         </div>
                         <div className="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
-                            <img src="assets/img/hero-img.png" className="img-fluid" alt="" />
+                            <img src="assets/img/hero-img3.png" className="img-fluid" alt="" />
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ function Home() {
             <main id="main">
 
                 {/* <!-- ======= Clients Section ======= --> */}
-                <section id="clients" className="clients section-bg">
+                {/* <section id="clients" className="clients section-bg">
                     <div className="container">
 
                         <div className="row no-gutters clients-wrap clearfix wow fadeInUp">
@@ -98,7 +98,7 @@ function Home() {
                         </div>
 
                     </div>
-                </section>
+                </section> */}
                 {/* <!-- End Clients Section --> */}
 
                 {/* <!-- ======= About Section ======= --> */}
@@ -232,7 +232,7 @@ function Home() {
                 {/* <!-- End Features Section --> */}
 
                 {/* <!-- ======= Team Section ======= --> */}
-                <section id="team" className="team section-bg">
+                {/* <section id="team" className="team section-bg">
                     <div className="container">
 
                         <div className="section-title">
@@ -301,7 +301,7 @@ function Home() {
                         </div>
 
                     </div>
-                </section>
+                </section> */}
                 {/* <!-- End Team Section --> */}
 
                 {/* <!-- ======= Frequently Asked Questions Section ======= --> */}
@@ -310,20 +310,17 @@ function Home() {
 
                         <div className="section-title">
                             <h2 data-aos="fade-in">Frequently Asked Questions</h2>
-                            <p data-aos="fade-in">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
-                            quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                            <p data-aos="fade-in">Gardening, farming or homesteading are not just hobbies, they are a lifestyle in a true sense. You are investing your time and money into something which provides you with both short-term and long-term benefits. We are here to make you the best in your choices.  </p>
                         </div>
 
                         <div className="row faq-item d-flex align-items-stretch" data-aos="fade-up">
                             <div className="col-lg-5">
                                 <i className="bx bx-help-circle"></i>
-                                <h4>Non consectetur a erat nam at lectus urna duis?</h4>
+                                <h4>Is GreenYourThumb a landscaping company?</h4>
                             </div>
                             <div className="col-lg-7">
                                 <p>
-                                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida.
-                                    Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                                    No, we are not a landscaping company but we provide you the best of resources for you landscape and connect with knowledgeable members.
         </p>
                             </div>
                         </div>
@@ -332,13 +329,11 @@ function Home() {
                         <div className="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                             <div className="col-lg-5">
                                 <i className="bx bx-help-circle"></i>
-                                <h4>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h4>
+                                <h4>Do you provide online courses about gardening and farming?</h4>
                             </div>
                             <div className="col-lg-7">
                                 <p>
-                                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec
-                                    ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit
-                                    ullamcorper dignissim.
+                                    At this point we are not providing any direct courses but you can certainly find out what others are doing to gain knowledge..
         </p>
                             </div>
                         </div>
@@ -354,9 +349,7 @@ function Home() {
 
                         <div className="section-title">
                             <h2 data-aos="fade-in">Contact</h2>
-                            <p data-aos="fade-in">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
-                            quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                            <p data-aos="fade-in">Reach out to us with your ideas , suggestions or feedback. We want this platform to be completely user driven. You can shape up this tool as well as the mindset of many by just speaking up.</p>
                         </div>
 
                         <div className="row">
@@ -368,21 +361,21 @@ function Home() {
                                         <div className="info-box" data-aos="fade-up">
                                             <i className="bx bx-map"></i>
                                             <h3>Our Address</h3>
-                                            <p>A108 Adam Street, New York, NY 535022</p>
+                                            <p>Wylie, TX 75098</p>
                                         </div>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="info-box mt-4" data-aos="fade-up" data-aos-delay="100">
                                             <i className="bx bx-envelope"></i>
                                             <h3>Email Us</h3>
-                                            <p>info@example.com<br />contact@example.com</p>
+                                            <p>grow@greenyourthumb.org</p>
                                         </div>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="info-box mt-4" data-aos="fade-up" data-aos-delay="100">
                                             <i className="bx bx-phone-call"></i>
                                             <h3>Call Us</h3>
-                                            <p>+1 5589 55488 55<br />+1 6678 254445 41</p>
+                                            <p>+1 800 GROWING</p>
                                         </div>
                                     </div>
                                 </div>
@@ -414,11 +407,11 @@ function Home() {
                                             data-msg="Please write something for us" placeholder="Message"></textarea>
                                         <div className="validate"></div>
                                     </div>
-                                    <div className="mb-3">
+                                    {/* <div className="mb-3">
                                         <div className="loading">Loading</div>
                                         <div className="error-message"></div>
                                         <div className="sent-message">Your message has been sent. Thank you!</div>
-                                    </div>
+                                    </div> */}
                                     <div className="text-center"><button type="submit">Send Message</button></div>
                                 </form>
                             </div>
@@ -430,9 +423,9 @@ function Home() {
                 {/* <!-- End Contact Section --> */}
 
             </main>
-              {/* <!-- End #main --> */}
+            {/* <!-- End #main --> */}
 
-             {/* <!-- ======= Footer ======= --> */}
+            {/* <!-- ======= Footer ======= --> */}
             <footer id="footer">
 
                 <div className="footer-top">
@@ -481,7 +474,7 @@ function Home() {
 
             <a href="/" className="back-to-top"><i className="icofont-simple-up"></i></a>
 
-            </>
+        </>
 
     );
 }

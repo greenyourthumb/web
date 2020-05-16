@@ -116,7 +116,7 @@ class Login extends Component {
                             <footer className="py-4 bg-light mt-auto">
                                 <div className="container-fluid">
                                     <div className="d-flex align-items-center justify-content-between small">
-                                        <div className="text-muted">Copyright &copy; Your Website 2019</div>
+                                        <div className="text-muted">Copyright &copy; GreenYourThumb.org 2020</div>
                                         <div>
                                             <a href="/">Privacy Policy</a>
                                 &middot;
