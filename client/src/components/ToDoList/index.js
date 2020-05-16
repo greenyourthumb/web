@@ -1,21 +1,41 @@
-import React from "react";
 
-function ToDoList() {
-    return (
+import React, { Component } from 'react'
+import API from "../../Utils/API";
+
+
+class ToDoList extends Component {
+    constructor() {
+        super()
+        this.state = {
+            myList: [{}],
+        }
+    }
+    componentDidMount() {
+        this.loadItems();
+    }
+    loadItems = () => {
+        API.getMyReminders()
+            .then((res) =>
+                this.setState({
+                    myList: res.data,
+                })
+            )
+            .catch((err) => console.log(err));
+    };
+    render() {
+        return (
             <ul className="list-group">
                 <li className="list-group-item list-group-item-dark">Action Items</li>
-                <li className="list-group-item">Thin seedlings</li>
-                <li className="list-group-item">Transplant tomatos</li>
-                <li className="list-group-item">Fix garden hose</li>
-                <li className="list-group-item">Order organic fertilizer</li>
-                <li className="list-group-item">Clear bed 5</li>
-                <li className="list-group-item">Order container</li>
-                <li className="list-group-item">Turn copost pile</li>
-                <li className="list-group-item">Check bird food</li>
+                {this.state.myList.map((List, index) => (
+                    <li className="list-group-item">{List.title}</li>
+                )
+                )}
+
 
             </ul>
 
-    );
+        );
+    }
 }
 
 export default ToDoList;

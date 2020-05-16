@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 
-import Nav from "../../../components/Nav"
+import TopNav from "../../../components/TopNav"
 import SideNav from "../../../components/SideNav"
 import Footer from "../../../components/Footer"
 import Gallery from "react-photo-gallery";
@@ -25,7 +25,7 @@ function MyGallery() {
     return (
         <>
             <div className="sb-nav-fixed">
-                <Nav />
+                <TopNav />
                 <div id="layoutSidenav">
                     <SideNav />
                     <div id="layoutSidenav_content">

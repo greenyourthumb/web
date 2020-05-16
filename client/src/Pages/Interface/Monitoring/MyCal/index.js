@@ -5,7 +5,7 @@ import API from "../../../../Utils/API";
 import moment from 'moment';
 import "./style.css"
 import { DatePickerInput } from 'rc-datepicker';
-import Nav from "../../../../components/Nav"
+import TopNav from "../../../../components/TopNav"
 import SideNav from "../../../../components/SideNav"
 import Footer from "../../../../components/Footer"
 import { Input, FormBtn, TextArea, Select } from "../../../../components/Form";
@@ -80,7 +80,7 @@ class MyCal extends Component {
 
         return (
             <div className="sb-nav-fixed">
-                <Nav />
+                <TopNav />
                 <div id="layoutSidenav">
                     <SideNav />
                     <div id="layoutSidenav_content">

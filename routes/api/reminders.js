@@ -12,5 +12,7 @@ router
 	.put(remindersController.update)
 	.delete(remindersController.remove);
 
+router.route("/high").get(remindersController.findAlerts);
+
 // Exporting
 module.exports = router;

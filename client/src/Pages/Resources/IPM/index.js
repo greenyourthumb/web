@@ -3,10 +3,9 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Ca
 import classnames from 'classnames';
 
 
-// import Nav from "../../../components/Nav"
+import TopNav from "../../../components/TopNav"
 import SideNav from "../../../components/SideNav"
 import Footer from "../../../components/Footer"
-
 
 const IPM = (props) => {
     const [activeTab, setActiveTab] = useState('1');
@@ -17,7 +16,7 @@ const IPM = (props) => {
 
     return (
         <div className="sb-nav-fixed">
-            <Nav />
+            <TopNav />
             <div id="layoutSidenav">
                 <SideNav />
                 <div id="layoutSidenav_content">
@@ -46,37 +45,76 @@ const IPM = (props) => {
                             <TabContent activeTab={activeTab}>
                                 <TabPane tabId="1">
                                     <Row>
-                                        <Col sm="12">
-                                            <h4>Tab 1 Contents</h4>
+                                        <Col sm="2">
+                                            <Card body>
+                                                    <CardTitle>Special Title Treatment</CardTitle>
+                                                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                                    <Button>Go somewhere</Button>
+                                            </Card>
+                                        </Col>
+                                        <Col sm="2">
+                                            <Card body>
+                                                    <CardTitle>Special Title Treatment</CardTitle>
+                                                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                                    <Button>Go somewhere</Button>
+                                            </Card>
+                                        </Col>
+                                        <Col sm="2">
+                                            <Card body>
+                                                    <CardTitle>Special Title Treatment</CardTitle>
+                                                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                                    <Button>Go somewhere</Button>
+                                            </Card>
+                                        </Col>
+                                        <Col sm="2">
+                                            <Card body>
+                                                    <CardTitle>Special Title Treatment</CardTitle>
+                                                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                                    <Button>Go somewhere</Button>
+                                            </Card>
+                                        </Col>
+                                        <Col sm="2">
+                                            <Card body>
+                                                    <CardTitle>Special Title Treatment</CardTitle>
+                                                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                                    <Button>Go somewhere</Button>
+                                            </Card>
+                                        </Col>
+                                        <Col sm="2">
+                                            <Card body>
+                                                    <CardTitle>Special Title Treatment</CardTitle>
+                                                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                                    <Button>Go somewhere</Button>
+                                            </Card>
                                         </Col>
                                     </Row>
                                 </TabPane>
-                                <TabPane tabId="2">
-                                    <Row>
-                                        <Col sm="6">
-                                            <Card body>
-                                                <CardTitle>Special Title Treatment</CardTitle>
-                                                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                                                <Button>Go somewhere</Button>
-                                            </Card>
-                                        </Col>
-                                        <Col sm="6">
-                                            <Card body>
-                                                <CardTitle>Special Title Treatment</CardTitle>
-                                                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                                                <Button>Go somewhere</Button>
-                                            </Card>
-                                        </Col>
-                                    </Row>
-                                </TabPane>
+                                    <TabPane tabId="2">
+                                        <Row>
+                                            <Col sm="6">
+                                                <Card body>
+                                                    <CardTitle>Special Title Treatment</CardTitle>
+                                                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                                    <Button>Go somewhere</Button>
+                                                </Card>
+                                            </Col>
+                                            <Col sm="6">
+                                                <Card body>
+                                                    <CardTitle>Special Title Treatment</CardTitle>
+                                                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                                    <Button>Go somewhere</Button>
+                                                </Card>
+                                            </Col>
+                                        </Row>
+                                    </TabPane>
                             </TabContent>
                         </div>
                     </main>
-                    <Footer />
+                        <Footer />
                 </div>
-            </div>
+                </div>
 
-        </div>
+            </div>
 
     );
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from "../../../../components/Nav"
+import TopNav from "../../../../components/TopNav"
 import SideNav from "../../../../components/SideNav"
 import Footer from "../../../../components/Footer"
 
@@ -37,7 +37,7 @@ function CropCal() {
 
     return (
         <div className="sb-nav-fixed">
-            <Nav />
+            <TopNav />
             <div id="layoutSidenav">
                 <SideNav />
                 <div id="layoutSidenav_content">

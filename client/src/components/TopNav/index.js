@@ -1,6 +1,6 @@
 import React from "react";
 
-function Nav() {
+function TopNav() {
 	return (
 		<nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 			<a className="navbar-brand" href="/mygreenzone">My Green Zone</a><button className="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="/"><i className="fas fa-bars"></i></button>
@@ -26,4 +26,4 @@ function Nav() {
 	);
 }
 
-export default Nav;
+export default TopNav;

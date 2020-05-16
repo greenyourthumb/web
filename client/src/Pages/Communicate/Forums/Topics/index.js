@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Topic from "../../../../components/Forum/Topic"
-import Nav from "../../../../components/Nav"
+import TopNav from "../../../../components/TopNav"
 import SideNav from "../../../../components/SideNav"
 import Footer from "../../../../components/Footer"
 import moment from 'moment';
@@ -61,7 +61,7 @@ class Topics extends Component {
 
         return (
             <div className="sb-nav-fixed">
-                <Nav />
+                <TopNav />
                 <div id="layoutSidenav">
                     <SideNav />
                     <div id="layoutSidenav_content">

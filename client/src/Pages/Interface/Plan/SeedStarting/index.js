@@ -5,7 +5,7 @@ import { Input, FormBtn } from "../../../../components/Form";
 import DataGrid from 'react-data-grid';
 import 'react-data-grid/dist/react-data-grid.css';
 
-import Nav from "../../../../components/Nav"
+import TopNav from "../../../../components/TopNav"
 import SideNav from "../../../../components/SideNav"
 import Footer from "../../../../components/Footer"
 import ListOfItems from "../../../../components/listOfItems"
@@ -82,7 +82,7 @@ class SeedStarting extends Component {
         
         return (
             <div className="sb-nav-fixed">
-                <Nav />
+                <TopNav />
                 <div id="layoutSidenav">
                     <SideNav />
                     <div id="layoutSidenav_content">

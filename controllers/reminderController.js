@@ -9,6 +9,12 @@ module.exports = {
 			.then((dbModel) => res.json(dbModel))
 			.catch((err) => res.json(err));
 	},
+	findAlerts: function (req, res) {
+		db.Reminders.find({priority: "High"})
+			.sort({ created_at: -1 })
+			.then((dbModel) => res.json(dbModel))
+			.catch((err) => res.json(err));
+	},	
 	findById: function (req, res) {
 		db.Reminders.find({ _id: req.params.id })
 			.then((dbModel) => res.json(dbModel))

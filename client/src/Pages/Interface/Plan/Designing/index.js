@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import "./style.css";
 
-import Nav from "../../../../components/Nav"
+import TopNav from "../../../../components/TopNav"
 import SideNav from "../../../../components/SideNav"
 import Footer from "../../../../components/Footer"
 import CanvasDraw from "react-canvas-draw";
@@ -22,7 +22,7 @@ class Designing extends Component {
 
 
             <div className="sb-nav-fixed">
-                <Nav />
+                <TopNav />
                 <div id="layoutSidenav">
                     <SideNav />
                     <div id="layoutSidenav_content">

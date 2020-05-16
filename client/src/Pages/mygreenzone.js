@@ -3,12 +3,12 @@ import { Bar } from 'react-chartjs-2';
 import axios from 'axios'
 //import API from "../Utils/API";
 
-import Nav from "../components/Nav"
+import TopNav from "../components/TopNav"
 import SideNav from "../components/SideNav"
 import DashboardCards from "../components/DashboardCards"
 import CurrentWeather from "../components/CurrentWeather"
 import ToDoList from "../components/ToDoList"
-
+import Budget from "../components/Budget"
 import Footer from "../components/Footer"
 
 var dow_array = [];
@@ -122,7 +122,7 @@ class MyGreenZone extends Component {
         return (
 
             <div className="sb-nav-fixed">
-                <Nav />
+                <TopNav />
                 <div id="layoutSidenav">
                     <SideNav >{this.props.location.state.firstname}</SideNav>
                     <div id="layoutSidenav_content">
@@ -138,7 +138,7 @@ class MyGreenZone extends Component {
                                         <ToDoList />
                                     </div>
                                     <div className="col-xl-3">
-
+                                        <Budget />
                                     </div>
                                     <div className="col-xl-6">
                                         <CurrentWeather>{this.props.location.state.zipcode}</CurrentWeather>

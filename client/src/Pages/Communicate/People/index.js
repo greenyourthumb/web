@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Nav from "../../../components/Nav"
+import TopNav from "../../../components/TopNav"
 import SideNav from "../../../components/SideNav"
 import Footer from "../../../components/Footer"
 import PeopleList from "../../../components/People"
@@ -34,7 +34,7 @@ class People extends Component {
 
         return (
             <div className="sb-nav-fixed">
-                <Nav />
+                <TopNav />
                 <div id="layoutSidenav">
                     <SideNav />
                     <div id="layoutSidenav_content">

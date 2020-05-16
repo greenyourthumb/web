@@ -113,6 +113,9 @@ export default {
 		console.log(reminderData);
 		return axios.post("/api/reminders", reminderData)
 	},
+	getMyAlerts: function() {
+		return axios.get("/api/reminders/high");
+	},
 
 	getWeatherForecast: async function () {
 		let results = []

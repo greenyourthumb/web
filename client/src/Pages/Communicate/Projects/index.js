@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-import Nav from "../../../components/Nav"
+import TopNav from "../../../components/TopNav"
 import SideNav from "../../../components/SideNav"
 import Footer from "../../../components/Footer"
 
@@ -10,7 +10,7 @@ function Projects() {
     return (
         <>
             <div className="sb-nav-fixed">
-                <Nav />
+                <TopNav />
                 <div id="layoutSidenav">
                     <SideNav />
                     <div id="layoutSidenav_content">
