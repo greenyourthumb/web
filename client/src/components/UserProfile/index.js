@@ -97,13 +97,13 @@ class UserProfile extends Component {
                             </table>
                         </div>
                         <div className="tab-pane" id="edit">
-                            <UserProfileForm user={this.state.user} handleProfileUpdate={this.handleProfileUpdate} />
+                            <UserProfileForm user={this.state.user} handleProfileInfoUpdate={this.handleProfileUpdate} />
                         </div>
                     </div>
                 </div>
                 <div className="col-lg-4 order-lg-1 text-center">
                     <h6 className="mt-2">Upload a photo</h6>
-                    <ImageUpload />
+                    <ImageUpload user={this.state.user} handleImageUpdate={this.handleProfileUpdate} />
 
                 </div>
             </div>

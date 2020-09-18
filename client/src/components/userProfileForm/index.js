@@ -39,7 +39,7 @@ class UserProfileForm extends Component {
         if (this.state.zipCode) {
             userData.zipCode = this.state.zipCode;
         }
-        this.props.handleProfileUpdate(userData);
+        this.props.handleProfileInfoUpdate(userData);
     };
 
     render() {
