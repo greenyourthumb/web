@@ -80,7 +80,7 @@ export default {
 	},
 
 	getUserProfile: function (userData) {
-		return axios.post("/api/user/all", userData);
+		return axios.get("/api/user/profile", userData);
 	},
 
 	getUser: function (userData) {
@@ -88,7 +88,7 @@ export default {
 	},
 
 	updateUserProfile: function (userData) {
-		return axios.put("/:id", userData);
+		return axios.put("/api/user/profile", userData);
 	},
 
 	getUserGrowList: function () {

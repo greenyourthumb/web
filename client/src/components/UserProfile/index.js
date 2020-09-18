@@ -1,11 +1,39 @@
-import React from "react";
-
 import ImageUpload from "../../components/ImageUpload"
 import UserProfileForm from "../../components/userProfileForm"
+import React, { Component } from "react";
+import API from "../../Utils/API";
 
-function UserProfile() {
-    return (
-<div className="row my-2">
+class UserProfile extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: {},
+      }
+    }
+    componentDidMount() {
+        this.loadItems();
+    }
+    loadItems = () => {
+        API.getUserProfile()
+            .then((res) =>
+                this.setState({
+                    user: res.data,
+                })
+            )
+            .catch((err) => console.log(err));
+    };
+
+    handleProfileUpdate = (userData) => {
+        API.updateUserProfile(userData)
+            .then((res) =>{ 
+                this.loadItems();
+            })
+            .catch((err) => console.log(err));
+    };
+    
+    render() {
+        return (
+            <div className="row my-2">
             <div className="col-lg-6 order-lg-2">
                 <ul className="nav nav-tabs">
                     <li className="nav-item">
@@ -20,16 +48,16 @@ function UserProfile() {
                 </ul>
                 <div className="tab-content py-4">
                     <div className="tab-pane active" id="profile">
-                        <h5 className="mb-3">User Profile</h5>
+        <h5 className="mb-3">{this.state.user.firstName} {this.state.user.lastName} Profile</h5>
                         <div className="row">
                             <div className="col-md-6">
                                 <h6>About:</h6>
                                 <p>
-                                    Backyard farmer, Fullstack developer
+                                    {this.state.user.about}
                             </p>
                                 <h6>Interested in:</h6>
                                 <p>
-                                    Growing my own food, solving problems through code.
+                                    {this.state.user.interests}
                             </p>
                             </div>
                             </div>
@@ -69,7 +97,7 @@ function UserProfile() {
                             </table>
                         </div>
                         <div className="tab-pane" id="edit">
-                            <UserProfileForm />
+                            <UserProfileForm user={this.state.user} handleProfileUpdate={this.handleProfileUpdate} />
                         </div>
                     </div>
                 </div>
@@ -79,8 +107,8 @@ function UserProfile() {
 
                 </div>
             </div>
-
-    );
+        )
+    }
 }
 
 export default UserProfile;
