@@ -76,6 +76,27 @@ router.get('/all', function (req, res) {
     })
 
 })
+
+router.get('/profile', (req, res) => {
+    console.log('passport', req.session.passport.user);
+    User.findOne({ _id: req.session.passport.user._id }, (err, data) => {
+        if (err) {
+            console.log('User.js profile error: ', err)
+        } else {
+            res.json(data)
+        }
+    })
+}
+)
+
+router.put('/profile', function (req, res) {
+    console.log('PUT profile called', req.body);
+    User.findOneAndUpdate({ _id: req.session.passport.user._id }, req.body)
+			.then((dbModel) => res.json(dbModel))
+			.catch((err) => res.json(err));
+})
+
+
 router.post('/all', function (req, res) {
     User.findOne({ username: req.body.user_email }, (err, data) => {
         if (err) {

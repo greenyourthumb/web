@@ -1,36 +1,20 @@
 import React, { Component } from "react";
 
-import API from "../../Utils/API";
-
 class UserProfileForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: {},
             firstName: '',
             lastName: '',
-            email: '',
             zipCode: '',
-            password: '',
             about: '',
             interests: '',
         }
     }
-    componentDidMount() {
-        this.loadItems();
-    }
-    loadItems = () => {
-        API.getUserProfile()
-            .then((res) =>
-                this.setState({
-                    user: res.data,
-                })
-            )
-            .catch((err) => console.log(err));
-    };
 
     handleInputChange(property) {
         return (e) => {
+            this.props.user[property] = e.target.value;
             this.setState({
                 [property]: e.target.value,
             });
@@ -39,19 +23,23 @@ class UserProfileForm extends Component {
 
     handleFormSubmit = (event) => {
         event.preventDefault();
-        if (this.state.title && this.state.summary) {
-            API.updateUserProfile({
-                firstName: this.state.firstName,
-                lastName: this.state.lastName,
-                userName: this.state.userName,
-                zipCode: this.state.zipCode,
-                password: this.state.password,
-                about: this.state.about,
-                interests: this.state.interests,
-            })
-                .then((res) => this.loadItems())
-                .catch((err) => console.log(err));
+        let userData = {}
+        if (this.state.about) {
+            userData.about = this.state.about;
         }
+        if (this.state.interests) {
+            userData.interests = this.state.interests;
+        }
+        if (this.state.firstName) {
+            userData.firstName = this.state.firstName;
+        }
+        if (this.state.lastName) {
+            userData.lastName = this.state.lastName;
+        }
+        if (this.state.zipCode) {
+            userData.zipCode = this.state.zipCode;
+        }
+        this.props.handleProfileInfoUpdate(userData);
     };
 
     render() {
@@ -60,56 +48,38 @@ class UserProfileForm extends Component {
                 <div className="form-group row">
                     <label className="col-lg-3 col-form-label form-control-label">First name</label>
                     <div className="col-lg-9">
-                        <input className="form-control" type="text" value={this.state.user.firstName} />
+                        <input className="form-control" type="text" value={this.props.user.firstName} onChange={this.handleInputChange("firstName")} />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-lg-3 col-form-label form-control-label">Last name</label>
                     <div className="col-lg-9">
-                        <input className="form-control" type="text" value={this.state.user.lastName} />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label className="col-lg-3 col-form-label form-control-label">Email</label>
-                    <div className="col-lg-9">
-                        <input className="form-control" type="email" value={this.state.user.userName} />
+                        <input className="form-control" type="text" value={this.props.user.lastName} onChange={this.handleInputChange("lastName")} />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-lg-3 col-form-label form-control-label">About</label>
                     <div className="col-lg-9">
-                        <textarea className="form-control" rows="2" value={this.state.user.about} />
+                        <textarea className="form-control" rows="2" value={this.props.user.about} onChange={this.handleInputChange("about")} />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-lg-3 col-form-label form-control-label">Interested In:</label>
                     <div className="col-lg-9">
-                        <input className="form-control" type="text" value={this.state.user.interests} />
+                        <input className="form-control" type="text" value={this.props.user.interests} onChange={this.handleInputChange("interests")} />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-lg-3 col-form-label form-control-label">ZIP Code</label>
                     <div className="col-lg-3">
-                        <input className="form-control" type="text" value={this.state.user.zipCode} />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label className="col-lg-3 col-form-label form-control-label">Password</label>
-                    <div className="col-lg-9">
-                        <input className="form-control" type="password" value="11111122333" />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label className="col-lg-3 col-form-label form-control-label">Confirm password</label>
-                    <div className="col-lg-9">
-                        <input className="form-control" type="password" value="11111122333" />
+                        <input className="form-control" type="text" value={this.props.user.zipCode} onChange={this.handleInputChange("zipCode")} />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-lg-3 col-form-label form-control-label"></label>
                     <div className="col-lg-9">
                         <input type="reset" className="btn btn-secondary" value="Cancel" />
-                        <input type="button" className="btn btn-primary" value="Save Changes" onSubmit={this.handleSubmit} />
+                        <input type="button" className="btn btn-primary" value="Save Changes" onClick={this.handleFormSubmit} />
                     </div>
                 </div>
             </form>
