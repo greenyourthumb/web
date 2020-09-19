@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Bar } from 'react-chartjs-2';
 import axios from 'axios'
-//import API from "../Utils/API";
+import API from "../Utils/API";
 
 import TopNav from "../components/TopNav"
 import SideNav from "../components/SideNav"
@@ -75,9 +75,10 @@ const state = {
 
 
 class MyGreenZone extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
+            user : {},
             // chart_data : {
             //     labels: dow_array,
             //     datasets: [
@@ -92,11 +93,18 @@ class MyGreenZone extends Component {
             // isLoggedIn: true,
         }
     }
-    // componentDidMount() {
-    //     this.loadItems();
-    // }
+        componentDidMount() {
+           this.loadItems();
+        }
 
-    //    loadItems = () => {
+         loadItems = () => {
+            API.getUserProfile()
+            .then((res) =>
+                this.setState({
+                    user: res.data,
+                })
+            )
+            .catch((err) => console.log(err)); 
     //     API.getWeatherForecast()
     //         .then((res) =>
     //             this.setState({
@@ -114,7 +122,7 @@ class MyGreenZone extends Component {
     //             }) 
     //         )
     //         .catch((err) => console.log(err))   
-    // };
+        };
 
 
     render() {
@@ -124,7 +132,7 @@ class MyGreenZone extends Component {
             <div className="sb-nav-fixed">
                 <TopNav />
                 <div id="layoutSidenav">
-                    <SideNav >{this.props.location.state.firstname}</SideNav>
+                    <SideNav >{this.state.user.firstName}</SideNav>
                     <div id="layoutSidenav_content">
                         <main>
                             <div className="container-fluid">
@@ -141,7 +149,7 @@ class MyGreenZone extends Component {
                                         <Budget />
                                     </div>
                                     <div className="col-xl-6">
-                                        <CurrentWeather>{this.props.location.state.zipcode}</CurrentWeather>
+                                        <CurrentWeather>{this.state.user.zipcode}</CurrentWeather>
 
                                         <Bar
                                             data={state}
