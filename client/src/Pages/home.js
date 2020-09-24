@@ -20,7 +20,8 @@ function Home() {
                             {/* <li><a href="#team">Team</a></li> */}
                             <li><a href="#faq">FAQs</a></li>
                             <li><a href="#contact">Contact Us</a></li>
-                            <li className="get-started"><a href="/signup">Get Started</a></li>
+                            <li className="get-started"><a href="/login">Login</a></li>
+                            <li className="login"><a href="/signup">Get Started</a></li>
                         </ul>
                     </nav>
 
