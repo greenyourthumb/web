@@ -9,7 +9,6 @@ class ImageUpload extends Component {
         super(props);
         this.state = {
             image: null,
-            url: '',
             // progress: 0,
         }
         this.handleChange = this.handleChange.bind(this);
@@ -38,14 +37,9 @@ class ImageUpload extends Component {
             () => {
                 //complete status function
                 storage.ref('images').child(image.name).getDownloadURL().then(url => {
-                    this.setState({ url });
-
-                    API.updateUserProfile({
-                        profileImageURL: this.state.url,
+                    this.props.handleImageUpdate({
+                        profileImageURL: url
                     })
-                    // .then((res) => this.loadItems())
-                    .catch((err) => console.log(err));
-                    console.log(url);
                 })
             });
 
@@ -58,7 +52,7 @@ class ImageUpload extends Component {
     render() {
         return (
             <div>
-                <img src={this.state.url || "//placehold.it/150"} width="150" height="150" className="mx-auto img-fluid img-circle d-block" alt="avatar" /><br/>
+                <img src={this.props.user.profileImageURL || "//placehold.it/150"} width="150" height="150" className="mx-auto img-fluid img-circle d-block" alt="avatar" /><br/>
                 <input type="file" onChange={this.handleChange} size="100"/>
                 <button onClick={this.handleUpload}>Upload</button>
                 {/* <progress value={this.state.progress} max="100" /> */}
