@@ -17,7 +17,7 @@
 		"mongodb": "^3.5.7",
 		"mongoose": "^5.9.9",
 		"morgan": "^1.10.0",
-		"nodemon": "^2.0.3",
+		"nodemon": "^2.0.20",
 		"passport": "^0.4.1",
 		"passport-local": "^1.0.0",
 		"rc-datepicker": "^5.0.16",
